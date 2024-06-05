@@ -1,0 +1,56 @@
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $nav-bg;
+  z-index: 999;
+}
+.navigation {
+  &-item {
+    &-box {
+      display: grid;
+      font-size: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &-list {
+      // border-radius: 0 0 2rem 2rem;
+      padding: 1.5rem 2rem;
+      transition: width 0.3s ease-in-out;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      &-text {
+        position: relative;
+        z-index: 5;
+        mix-blend-mode: difference;
+      }
+    }
+  }
+}
+.active {
+  background: $page-bg;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--percentage);
+    // width: 10%;
+    background-color: $nav-bg;
+    // opacity: 0.5;
+  }
+}
+// width: calc(var(--percentage, 0) * 1%);
+
+.scroll-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background-color: #000;
+  z-index: 9999;
+  transition: width 0.25s ease-out;
+}

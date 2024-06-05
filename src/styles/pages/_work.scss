@@ -1,0 +1,106 @@
+@use 'sass:math';
+
+.work {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  //Head text
+  &-title {
+    text-align: center;
+    margin-block: 5%;
+    &-main,
+    &-sub {
+      display: block;
+      text-transform: uppercase;
+    }
+    &-main {
+      font-size: 2rem;
+      font-weight: 700;
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+        margin: 1rem 0;
+      }
+    }
+  }
+  //Work items
+  &-item {
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(480px, 1fr));
+      width: 100%;
+      margin: auto;
+      @include responsive(md) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      // @include responsive(lg) {
+      //   grid-template-columns: repeat(3, minmax(0, 1fr));
+      // }
+      // @include responsive(xl) {
+      //   grid-template-columns: repeat(4, minmax(0, 1fr));
+      // }
+    }
+    &-card {
+      @include border;
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      margin: 1rem;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      }
+      &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+
+        &-title {
+          position: absolute;
+          bottom: 10%;
+          background: #000;
+          width: 90%;
+          padding: 1rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          color: #fff;
+          font-size: 1.5rem;
+          @include border($page-bg);
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
