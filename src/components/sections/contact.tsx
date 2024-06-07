@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import {
   GithubIcon,
+  HomeIcon,
   Mail,
   NotebookIcon,
 } from 'lucide-react';
@@ -39,6 +40,16 @@ const Contact = () => {
             rel="noreferrer"
           >
             Notion Resume Page
+          </a>
+        </span>
+        <span className={cn('item')}>
+          <HomeIcon size={24} />
+          <a
+            href="https://blog.jisung.pro"
+            target="_blank"
+            rel="noreferrer"
+          >
+            정리하려고 하는 블로그
           </a>
         </span>
       </div>
