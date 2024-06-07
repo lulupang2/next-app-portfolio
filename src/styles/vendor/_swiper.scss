@@ -1,0 +1,72 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+.swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  align-items: center;
+}
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.swiper-slide > img {
+  display: block;
+  aspect-ratio: 16/ 9;
+  object-fit: scale-down;
+
+  border-radius: 15px;
+}
+.swiper-button-prev {
+  // color: $primary-color !important;
+}
+
+.swiper-button-next {
+  // color: $primary-color !important;
+}
+.swiper-pagination-bullet-active {
+  // background-color: $primary-color !important;
+}
+.mainSwiper {
+  flex: 8;
+}
+.thumbSwiper {
+  flex: 2;
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.skeleton {
+  animation: skeleton 2s infinite ease-in-out;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}

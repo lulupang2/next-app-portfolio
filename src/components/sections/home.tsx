@@ -1,22 +1,23 @@
-"use client";
-import React from "react";
-
-// const Home = React.forwardRef<HTMLDivElement, SectionProps>((props, ref) => {
-const Home = (props: SectionProps) => {
-  const ref = React.useRef<HTMLDivElement>(null);
+import Image from 'next/image';
+import React from 'react';
+const Home = () => {
   return (
-    <div
-      // ref={ref}
-      // id={props.name}
-      className={`page-wrapper home`}
-    >
-      <h1 className="home-title">WELCOME</h1>
-      <h2 className="home-subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nulla
-        dolores sit amet obcaecati quis odio molestias, maxime, numquam fuga
-        ducimus ab dolor aut est reprehenderit cupiditate, libero sunt id!
-      </h2>
-    </div>
+    <section className="page-wrapper home">
+      <div className="home-hero">
+        <Image src="/images/heroLogo.svg" alt="home" fill />
+      </div>
+      <span className="home-title">WELCOME</span>
+      <span className="home-subtitle">
+        안녕하세요, 웹개발자 지성인입니다. <br />
+        주로 JavaScript를 사용한 프론트엔드 작업을 많이
+        해왔습니다. <br />
+        현재 이 페이지는 Next.js를 사용하여 간단하게
+        제작했습니다. <br />
+        이곳은 제가 지금까지 작업해온 프로젝트들을 정리한
+        페이지입니다. <br />
+        방문해주셔서 감사합니다.👋
+      </span>
+    </section>
   );
 };
 

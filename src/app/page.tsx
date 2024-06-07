@@ -1,5 +1,6 @@
 'use client';
 import { Home, Work } from '@/components/sections';
+import Contact from '@/components/sections/contact';
 import { useScroll } from '@/hooks/useScroll';
 
 export default function Page() {
@@ -10,9 +11,9 @@ export default function Page() {
         className="scroll-progress"
         style={{ width: `${scrollProgress}%` }}
       />
-      <Home name="home" />
-      가나다라
+      <Home />
       <Work />
+      <Contact />
     </main>
   );
 }

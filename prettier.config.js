@@ -2,7 +2,7 @@
 // prettier.config.js
 module.exports = {
   // 한 줄의 코드 길이 지정
-  printWidth: 80,
+  printWidth: 60,
   // 문자열을 사용할 때 따옴표 형식 지정
   singleQuote: true,
   // 객체의 키와 값 사이에 공백 추가

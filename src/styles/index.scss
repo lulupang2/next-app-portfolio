@@ -9,12 +9,14 @@
 @import 'pages';
 @import 'pages/home';
 @import 'pages/work';
+@import 'pages/contact';
 
-//breakpoints
+// Components
+@import 'components/modal';
 
+// library
+@import 'vendor/swiper';
 :root {
-  font-family: 'suitFont', 'suitFont Fallback', system-ui, Helvetica, Arial,
-    sans-serif;
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
