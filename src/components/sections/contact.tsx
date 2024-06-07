@@ -34,7 +34,7 @@ const Contact = () => {
         <span className={cn('item')}>
           <NotebookIcon size={24} />
           <a
-            href="https://www.notion.so/jisungin/1-32852d349e45496ab785ad1c4679d48c?pvs=4"
+            href="https://jisungin.notion.site/1-32852d349e45496ab785ad1c4679d48c?pvs=4"
             target="_blank"
             rel="noreferrer"
           >
