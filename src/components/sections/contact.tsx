@@ -15,10 +15,10 @@ const Contact = () => {
         <span className={cn('item')}>
           <Mail size={24} />
           <a
-            href="mailto:lulupang@mail"
+            href="mailto:lulupang@mail.com"
             className={cn('email')}
           >
-            lulupang@mail
+            lulupang@mail.com
           </a>
         </span>
         <span className={cn('item')}>
