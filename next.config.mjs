@@ -4,8 +4,14 @@ const nextConfig = {
     includePaths: ['./src/styles'],
   },
   images: {
-    domains: [
-      'ji-springboot-bucket.s3.ap-northeast-2.amazonaws.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname:
+          'ji-springboot-bucket.s3.ap-northeast-2.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

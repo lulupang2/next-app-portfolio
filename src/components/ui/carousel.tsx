@@ -8,6 +8,7 @@ import {
 } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper/types';
+import Spinner from './spinner';
 
 const Carousel = ({
   imgs,
@@ -18,8 +19,19 @@ const Carousel = ({
 }) => {
   const [thumbsSwiper, setThumbsSwiper] =
     React.useState(null);
+  const [loading, setLoading] = React.useState<boolean[]>(
+    new Array(imgs.length + 1).fill(true)
+  );
+
   const handleSwiper = (swiper: SwiperType) =>
     setThumbsSwiper(swiper as any);
+  const handleImageLoad = (index: number) => {
+    setLoading((prevLoading) => {
+      const newLoading = [...prevLoading];
+      newLoading[index] = false;
+      return newLoading;
+    });
+  };
 
   return (
     <Fragment>
@@ -31,25 +43,27 @@ const Carousel = ({
         className="mainSwiper"
       >
         <SwiperSlide>
+          {loading[0] && <Spinner />}
+
           <Image
             src={thumb}
             alt={'work images'}
             fill
-            className="skeleton"
-            onLoadingComplete={(image) =>
-              image.classList.remove('skeleton')
-            }
+            // className="skeleton"
+            onLoadingComplete={() => handleImageLoad(0)}
           />
         </SwiperSlide>
         {imgs.map((img, index) => (
           <SwiperSlide key={index}>
+            {loading[index + 1] && <Spinner />}
+
             <Image
               src={img}
               alt={'work images'}
               fill
-              className="skeleton"
-              onLoadingComplete={(image) =>
-                image.classList.remove('skeleton')
+              // className="skeleton"
+              onLoadingComplete={() =>
+                handleImageLoad(index + 1)
               }
             />
           </SwiperSlide>
@@ -65,26 +79,26 @@ const Carousel = ({
         className="thumbSwiper"
       >
         <SwiperSlide>
+          {loading[0] && <Spinner />}
+
           <Image
             src={thumb}
             alt={'work thumbnail images'}
             fill
             className="skeleton"
-            onLoadingComplete={(image) =>
-              image.classList.remove('skeleton')
-            }
+            onLoadingComplete={() => handleImageLoad(0)}
           />
         </SwiperSlide>
         {imgs.map((img, index) => (
           <SwiperSlide key={index}>
+            {loading[index + 1] && <Spinner />}
+
             <Image
               src={img}
               alt={'work thumbnail images'}
               fill
               className="skeleton"
-              onLoadingComplete={(image) =>
-                image.classList.remove('skeleton')
-              }
+              onLoadingComplete={() => handleImageLoad(0)}
             />
           </SwiperSlide>
         ))}
