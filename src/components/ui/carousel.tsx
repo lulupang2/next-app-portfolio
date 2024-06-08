@@ -49,7 +49,6 @@ const Carousel = ({
             src={thumb}
             alt={'work images'}
             fill
-            // className="skeleton"
             onLoadingComplete={() => handleImageLoad(0)}
           />
         </SwiperSlide>
@@ -61,7 +60,6 @@ const Carousel = ({
               src={img}
               alt={'work images'}
               fill
-              // className="skeleton"
               onLoadingComplete={() =>
                 handleImageLoad(index + 1)
               }
@@ -85,7 +83,6 @@ const Carousel = ({
             src={thumb}
             alt={'work thumbnail images'}
             fill
-            className="skeleton"
             onLoadingComplete={() => handleImageLoad(0)}
           />
         </SwiperSlide>
@@ -97,7 +94,6 @@ const Carousel = ({
               src={img}
               alt={'work thumbnail images'}
               fill
-              className="skeleton"
               onLoadingComplete={() => handleImageLoad(0)}
             />
           </SwiperSlide>
